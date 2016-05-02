@@ -26,3 +26,44 @@
 
 	app.start();
 })();
+
+
+(function() {
+    var notifications = Windows.UI.Notifications;
+
+    // Wide tile
+    var template = notifications.TileTemplateType.tileWide310x150ImageAndText01;
+    var tileXml = notifications.TileUpdateManager.getTemplateContent(template);
+
+    var tileTextAttributes = tileXml.getElementsByTagName("text");
+    tileTextAttributes[0].appendChild(tileXml.createTextNode("Hello World! My very own tile notification"));
+
+    var tileImageAttributes = tileXml.getElementsByTagName("image");
+    tileImageAttributes[0].setAttribute("src", "ms-appx:///images/microsoft-sdk.png");
+    tileImageAttributes[0].setAttribute("alt", "red graphic");
+
+    // Medium tile
+    var squareTemplate = notifications.TileTemplateType.tileSquare150x150Text04;
+    var squareTileXml = notifications.TileUpdateManager.getTemplateContent(squareTemplate);
+
+    var squareTileTextAttributes = squareTileXml.getElementsByTagName("text");
+    squareTileTextAttributes[0].appendChild(squareTileXml.createTextNode("Hello World! My very own tile notification"));
+
+    // Add the medium tile to the wide tile's payload.
+    var node = tileXml.importNode(squareTileXml.getElementsByTagName("binding").item(0), true);
+    tileXml.getElementsByTagName("visual").item(0).appendChild(node);
+
+    // Create notification
+    var tileNotification = new notifications.TileNotification(tileXml);
+
+    // Expiration time
+    var currentTime = new Date();
+    tileNotification.expirationTime = new Date(currentTime.getTime() + 600 * 1000);
+
+    // Send the notification to the app tile.
+    notifications.TileUpdateManager.createTileUpdaterForApplication().update(tileNotification);
+
+
+
+
+})();
