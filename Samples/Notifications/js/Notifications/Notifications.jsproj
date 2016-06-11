@@ -61,16 +61,14 @@
     <Content Include="..\..\..\..\SharedContent\js\default.html">
       <Link>default.html</Link>
     </Content>
-    <!--<Content Include="html\scenario1-data.html" />
-    <Content Include="html\scenario2-stats.html" />
-    <Content Include="html\scenario3-enum.html" />
-    <Content Include="html\scenario4-unicodeExtensions.html" />
-    <Content Include="html\scenario5-timeZone.html" />-->
-    <Content Include="..\..\..\..\SharedContent\media\microsoft-sdk.png">
-      <Link>images\microsoft-sdk.png</Link>
+    <!--<Content Include="..\..\..\..\SharedContent\media\microsoft-sdk.png">
+      <Link>iamges\microsoft-sdk.png</Link>
     </Content>
     <Content Include="..\..\..\..\SharedContent\media\smalltile-sdk.png">
       <Link>images\smallTile-sdk.png</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\squaretile-sdk.png">
+      <Link>images\squareTile-sdk.png</Link>
     </Content>
     <Content Include="..\..\..\..\SharedContent\media\splash-sdk.png">
       <Link>images\splash-sdk.png</Link>
@@ -84,18 +82,42 @@
     <Content Include="..\..\..\..\SharedContent\media\windows-sdk.png">
       <Link>images\windows-sdk.png</Link>
     </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage1.jpg">
+      <Link>images\Photos\1.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage2.jpg">
+      <Link>images\Photos\2.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage3.jpg">
+      <Link>images\Photos\3.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage4.jpg">
+      <Link>images\Photos\4.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage5.jpg">
+      <Link>images\Photos\5.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage6.jpg">
+      <Link>images\Photos\6.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage7.jpg">
+      <Link>images\Photos\7.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage8.jpg">
+      <Link>images\Photos\8.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage9.jpg">
+      <Link>images\Photos\9.jpg</Link>
+    </Content>
+    <Content Include="..\..\..\..\SharedContent\media\Samples\LandscapeImage10.jpg">
+      <Link>images\Photos\10.jpg</Link>
+    </Content>-->
     <Content Include="..\..\..\..\SharedContent\js\js\default.js">
       <Link>js\default.js</Link>
     </Content>
     <Content Include="..\..\..\..\SharedContent\js\css\default.css">
       <Link>css\default.css</Link>
     </Content>
-    <!--<Content Include="js\sample-configuration.js" />
-    <Content Include="js\scenario1-data.js" />
-    <Content Include="js\scenario2-stats.js" />
-    <Content Include="js\scenario3-enum.js" />
-    <Content Include="js\scenario4-unicodeExtensions.js" />
-    <Content Include="js\scenario5-timeZone.js" />-->
     <Content Include="..\..\..\..\SharedContent\js\Microsoft.WinJS\css\ui-dark.css">
       <Link>Microsoft.WinJS.4.0\css\ui-dark.css</Link>
     </Content>
@@ -135,10 +157,11 @@
     <Content Include="..\..\..\..\SharedContent\js\sample-utils\scenario-select.html">
       <Link>sample-utils\scenario-select.html</Link>
     </Content>
+    <Content Include="Assets\**\**" />
     <Content Include="html\scenario2-badges.html" />
-    <Content Include="html\scenario1-livetiles.html" />
+    <Content Include="html\scenario1-pinningsecondarytiles.html" />
     <Content Include="js\sample-configuration.js" />
-    <Content Include="js\scenario1-livetiles.js" />
+    <Content Include="js\scenario1-pinningsecondarytiles.js" />
     <Content Include="js\scenario2-badges.js" />
     <None Include="Notifications_TemporaryKey.pfx" />
   </ItemGroup>
