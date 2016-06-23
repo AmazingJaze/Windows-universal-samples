@@ -3,43 +3,63 @@
 (function () {
     "use strict";
 
-    var Globalization = Windows.Globalization;
-    var Calendar = Globalization.Calendar;
-    var CalendarIdentifiers = Globalization.CalendarIdentifiers;
-    var ClockIdentifiers = Globalization.ClockIdentifiers;
+    //private async void ButtonUnpinEverything_Click(object sender, RoutedEventArgs e)
+    //{
+    //            ButtonUnpinEverything.IsEnabled = false;
 
-    var outputText;
+    //// Loop through every secondary tile
+    //foreach (SecondaryTile tile in await SecondaryTile.FindAllAsync())
+    //{
+    //// Unpin each secondary tile
+    //                await tile.RequestDeleteAsync();
+    //}
 
-    var page = WinJS.UI.Pages.define("/html/scenario2-badges.html", {
+    //ButtonUnpinEverything.IsEnabled = true;
+    //}
+
+    var SecondaryTile = Windows.UI.StartScreen.SecondaryTile;
+
+    // UI elements on the page
+    var unpinCommand;
+
+    var page = WinJS.UI.Pages.define("/html/scenario2-unpineverything.html", {
         ready: function (element, options) {
-            // Add event listeners and populate content.
-            //document.getElementById("showResults").addEventListener("click", showResults);
-            //outputText = document.getElementById("outputText");
+            unpinCommand = element.querySelector("#unpincommand");
+            unpinCommand.addEventListener("click", unpinTiles);
         }
     });
 
-    function reportCalendarData(calendar, calendarLabel) {
-        var results = calendarLabel + ": " + calendar.getCalendarSystem() + "\n";
-        results += "Name of Month: " + calendar.monthAsSoloString() + "\n";
-        results += "Day of Month: " + calendar.dayAsPaddedString(2) + "\n";
-        results += "Day of Week: " + calendar.dayOfWeekAsSoloString() + "\n";
-        results += "Year: " + calendar.yearAsString() + "\n";
-        results += "\n";
-        return results;
+
+    function unpinTiles() {
+        unpinCommand.disabled = true;
+
+        try {
+
+            SecondaryTile.findAllAsync().then(
+                function complete(tiles) {
+
+                    var unpinPromises = [];
+
+                    tiles.forEach((tile) => {
+                        unpinPromises.push(tile.requestDeleteAsync());
+                    });
+
+                    WinJS.Promise.join(unpinPromises).then(
+                        function complete() {
+                            unpinCommand.disabled = false;
+                        }),
+                        function error(e) {
+                            debugger;
+                        }
+                }),
+                function error(e) {
+                    debugger;
+                }
+
+        } catch (e) {
+            debugger;
+        }
+
     }
 
-    function showResults() {
-        // This scenario uses the Windows.Globalization.Calendar class to display the parts of a date.
-
-        // Create Calendar objects using different constructors.
-        var calendar = new Calendar();
-        var japaneseCalendar = new Calendar(["ja-JP"], CalendarIdentifiers.japanese, ClockIdentifiers.twelveHour);
-        var hebrewCalendar = new Calendar(["he-IL"], CalendarIdentifiers.hebrew, ClockIdentifiers.twentyFourHour);
-
-        // Display the results
-        outputText.innerText =
-            reportCalendarData(calendar, "User's default calendar system") +
-            reportCalendarData(japaneseCalendar, "Calendar system") +
-            reportCalendarData(hebrewCalendar, "Calendar system");
-    }
 })();
