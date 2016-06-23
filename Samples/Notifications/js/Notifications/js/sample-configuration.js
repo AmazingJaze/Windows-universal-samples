@@ -8,6 +8,8 @@
     var scenarios = [
         { url: "/html/scenario1-pinningsecondarytiles.html", title: "Pinning secondary tiles" },
 
+        { url: "/html/scenario2-unpineverything.html", title: "Unpin everything" },
+
         { url: "/html/scenario2-badges.html", title: "Badges" },
         //{ url: "/html/scenario3-enum.html", title: "Calendar enumeration and math" },
         //{ url: "/html/scenario4-unicodeExtensions.html", title: "Calendar with Unicode extensions in languages" },

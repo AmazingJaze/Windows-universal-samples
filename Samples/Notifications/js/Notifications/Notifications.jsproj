@@ -157,16 +157,16 @@
     <Content Include="..\..\..\..\SharedContent\js\sample-utils\scenario-select.html">
       <Link>sample-utils\scenario-select.html</Link>
     </Content>
-    <Content Include="Assets\**\**" />
+    <Content Include="images\**\**" />
+    <Content Include="css\scenario1-pinningsecondarytiles.css" />
+    <Content Include="html\scenario2-unpineverything.html" />
     <Content Include="html\scenario2-badges.html" />
     <Content Include="html\scenario1-pinningsecondarytiles.html" />
     <Content Include="js\sample-configuration.js" />
     <Content Include="js\scenario1-pinningsecondarytiles.js" />
+    <Content Include="js\scenario2-unpineverything.js" />
     <Content Include="js\scenario2-badges.js" />
     <None Include="Notifications_TemporaryKey.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="css\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment

@@ -7,13 +7,8 @@ Copyright (c) Microsoft Corporation. All rights reserved
 
 <head>
     <title></title>
+    <link href="/css/scenario1-pinningsecondarytiles.css" rel="stylesheet" />
     <script src="/js/scenario1-pinningsecondarytiles.js"></script>
-    <!--<style>
-        .win-checkbox:disabled::-ms-check,
-        .win-checkbox:indeterminate:disabled::-ms-check {
-            color: rgba(255, 255, 255, 0.4) !important;
-        }
-    </style>-->
 </head>
 
 <body class="win-type-body">
@@ -30,41 +25,36 @@ Copyright (c) Microsoft Corporation. All rights reserved
         a request to pin that secondary tile to their start menu.
     </p>
 
-    <p>Tile Display Name:</p>
-    <input type="text" id="displayname" class='win-textbox' value="Sample" /><br />
+    <span>Secondary Tile Name:</span>
+    <input type="text" id="displayname" class='win-textbox' placeholder="Placeholder text" /><br />
     
     <input type="checkbox" class='win-checkbox' id="checkboxsquare71x71logo" />
-    <label for="checkboxsquare71x71logo">Use Square71x71Logo</label><br />
-    <img src="/Assets/DefaultSecondaryTileAssests/Small.png"/><br />
+    <label for="checkboxsquare71x71logo">Support Square71x71Logo</label><br />
+    <img class="smalltile" src="/images/DefaultSecondaryTileAssests/Small.png"/><br />
 
     <input type="checkbox" class='win-checkbox' id="checkboxsquare150x150logo" checked disabled />
-    <label for="checkboxsquare150x150logo">Use Square150x150Logo (required)</label><br />
-    <img src="/Assets/DefaultSecondaryTileAssests/Medium.png" /><br />
+    <label for="checkboxsquare150x150logo">Support Square150x150Logo (required)</label><br />
+    <img class="mediumtile" src="/images/DefaultSecondaryTileAssests/Medium.png" /><br />
 
     <input type="checkbox" class='win-checkbox' id="checkboxwide310x150logo" />
-    <label for="checkboxwide310x150logo">Use Wide310x150Logo</label><br />
-    <img src="/Assets/DefaultSecondaryTileAssests/Wide.png" /><br />
+    <label for="checkboxwide310x150logo">Support Wide310x150Logo</label><br />
+    <img class="widetile" src="/images/DefaultSecondaryTileAssests/Wide.png" /><br />
 
     <input type="checkbox" class='win-checkbox' id="checkboxsquare310x310logo" />
-    <label for="checkboxsquare310x310logo">Use Square310x310Logo</label><br />
-    <img src="/Assets/DefaultSecondaryTileAssests/Large.png" /><br />
-
+    <label for="checkboxsquare310x310logo">Support Square310x310Logo</label><br />
+    <img class="largetile" src="/images/DefaultSecondaryTileAssests/Large.png" /><br />
+ 
     <input type="checkbox" class='win-checkbox' id="checkboxshownameonsquare150x150logo" />
     <label for="checkboxshownameonsquare150x150logo">Show name on Square150x150Logo</label><br />
 
     <input type="checkbox" class='win-checkbox' id="checkboxshownameonwide310x150logo" />
-    <label for="checkboxshownameonwide310x150logo">Show name on Square150x150Logo</label><br />
+    <label for="checkboxshownameonwide310x150logo">Show name on Wide310x150Logo</label><br />
 
     <input type="checkbox" class='win-checkbox' id="checkboxshownameonsquare310x310logo" />
-    <label for="checkboxshownameonsquare310x310logo">Show name on Square150x150Logo</label><br />
+    <label for="checkboxshownameonsquare310x310logo">Show name on Square310x310Logo</label><br />
 
-    <button class="win-button win-button-primary" id="pincommand">Click to pin Secondary Tile</button>
+    <button class="win-button win-button-primary" id="pincommand">Click to pin Secondary Tiles</button>
 
-    <!--<p>
-        <button id="showResults" class="win-button">Show results</button>
-    </p>
-    <p id="outputText">
-    </p>-->
 </body>
 
 </html>

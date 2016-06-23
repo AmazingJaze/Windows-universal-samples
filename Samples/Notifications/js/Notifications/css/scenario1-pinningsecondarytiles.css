@@ -1,0 +1,23 @@
+﻿img {
+    background-color: purple;
+}
+
+img.smalltile {
+    height: 71px;
+    width: 71px;
+}
+
+img.mediumtile {
+    height: 150px;
+    width: 150px;
+}
+
+img.widetile {
+    height: 150px;
+    width: 310px;
+}
+
+img.largetile {
+    height: 310px;
+    width: 310px;
+}
