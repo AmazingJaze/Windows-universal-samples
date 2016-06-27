@@ -34,7 +34,6 @@
             secondaryTilesListView = element.querySelector("#scenariocontrol").winControl;
 
             getTilesData().then(function (data) {
-                debugger;
                 secondaryTilesListView.itemDataSource = new WinJS.Binding.List(data).dataSource;
             })
         }
@@ -49,6 +48,8 @@
 
                        var bgColor = tile.visualElements.backgroundColor;
                        var bgColorString = "{a: " + bgColor.a + ", b: " + bgColor.b + ", g: " + bgColor.g + ", r: " + bgColor.r + "}";
+
+                       //return { displaName: tile.displayName };
 
                        return {
                            displayName: tile.displayName,
@@ -68,7 +69,7 @@
                                square310x310Logo: tile.visualElements.square310x310Logo.displayUri,
                                wide310x150Logo: tile.visualElements.wide310x150Logo.displayUri,
                            },
-                       }
+                       };
                    });
 
                    c(data);

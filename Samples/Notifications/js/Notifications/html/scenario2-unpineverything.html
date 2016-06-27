@@ -28,18 +28,31 @@ Copyright (c) Microsoft Corporation. All rights reserved
         </p>
 
         <!-- WinJS.Binding.Template for #scenariocontrol -->
-        <div id="scenarioitem" data-win-control="WinJS.Binding.Template" data-win-options="{ debugBreakOnRender: true }" style="display: none;">
-            <!--<div class="scenarioitem" data-win-bind="title: title">
-                <span class="scenarionumber" data-win-bind="innerText: scenarioNumber"></span><span data-win-bind="innerText: title"></span>
-            </div>-->
-            <span>HI</span>
+        <div id="scenarioitem" data-win-control="WinJS.Binding.Template" data-win-options="{ debugBreakOnRender: false }" style="display: none;">
+            <div class="scenarioitem" data-win-bind="title: title">
+                <span>displayName: </span><span data-win-bind="innerText: displayName"></span><br />
+                <span>tileId: </span><span data-win-bind="innerText: tileId"></span><br />
+                <span>arguments: </span><span data-win-bind="innerText: arguments"></span><br />
+                <span>visualElements.backgroundColor: </span><span data-win-bind="innerText: visualElements.backgroundColor"></span><br />
+                <!--<span>visualElements.foregroundText: </span><span data-win-bind="innerText: visualElements.foregroundText"></span><br />
+                <span>visualElements.showNameOnSquare150x150Logo: </span><span data-win-bind="innerText: visualElements.showNameOnSquare150x150Logo"></span><br />
+                <span>visualElements.showNameOnSquare310x310Logo: </span><span data-win-bind="innerText: visualElements.showNameOnSquare310x310Logo"></span><br />
+                <span>visualElements.showNameOnWide310x150Logo: </span><span data-win-bind="innerText: visualElements.showNameOnWide310x150Logo"></span><br />
+                <span>visualElements.square30x30Logo: </span><span data-win-bind="innerText: visualElements.square30x30Logo.displayUri"></span><br />
+                <span>visualElements.square44x44Logo: </span><span data-win-bind="innerText: visualElements.square44x44Logo.displayUri"></span><br />
+                <span>visualElements.square70x70Logo: </span><span data-win-bind="innerText: visualElements.square70x70Logo.displayUri"></span><br />
+                <span>visualElements.square71x71Logo: </span><span data-win-bind="innerText: visualElements.square71x71Logo.displayUri"></span><br />
+                <span>visualElements.square150x150Logo: </span><span data-win-bind="innerText: visualElements.square150x150Logo.displayUri"></span><br />
+                <span>visualElements.square310x310Logo: </span><span data-win-bind="innerText: visualElements.square310x310Logo.displayUri"></span><br />
+                <span>visualElements.wide310x150Logo: </span><span data-win-bind="innerText: visualElements.wide310x150Logo.displayUri"></span><br />-->
+            </div>
         </div>
 
         <!--itemDataSource: SdkSample.scenarios.dataSource,-->
         <div id="scenariocontrol" class="win-selectionstylefilled"
              data-win-control="WinJS.UI.ListView"
              data-win-options="{
-            itemTemplate: select('#scenarioItem'),
+            itemTemplate: select('#scenarioitem'),
             selectionMode: WinJS.UI.SelectionMode.single,
             tapBehavior: WinJS.UI.TapBehavior.directSelect,
             layout: { type: WinJS.UI.ListLayout }
