@@ -33,13 +33,14 @@
 
             secondaryTilesListView = element.querySelector("#scenariocontrol").winControl;
 
-            getTilesData().then(function (data) {
-                secondaryTilesListView.itemDataSource = new WinJS.Binding.List(data).dataSource;
-            })
+            unpinCommand.disabled = true;
+            setListViewData(secondaryTilesListView).then(function () {
+                unpinCommand.disabled = false;
+            });
         }
     });
 
-    function getTilesData() {
+    function setListViewData(listView) {
         return new WinJS.Promise(c => {
 
             SecondaryTile.findAllAsync().then(
@@ -48,8 +49,6 @@
 
                        var bgColor = tile.visualElements.backgroundColor;
                        var bgColorString = "{a: " + bgColor.a + ", b: " + bgColor.b + ", g: " + bgColor.g + ", r: " + bgColor.r + "}";
-
-                       //return { displaName: tile.displayName };
 
                        return {
                            displayName: tile.displayName,
@@ -72,7 +71,8 @@
                        };
                    });
 
-                   c(data);
+                   listView.itemDataSource = new WinJS.Binding.List(data).dataSource;
+                   c();
                }),
                function error(e) {
                    debugger;
@@ -97,18 +97,20 @@
 
                     WinJS.Promise.join(unpinPromises).then(
                         function complete() {
-                            unpinCommand.disabled = false;
+                            setListViewData(secondaryTilesListView).then(function () {
+                                unpinCommand.disabled = false;
+                            });
                         }),
                         function error(e) {
-                            debugger;
+                            throw e;
                         }
                 }),
                 function error(e) {
-                    debugger;
+                    throw e;
                 }
 
         } catch (e) {
-            debugger;
+            throw e;
         }
 
     }

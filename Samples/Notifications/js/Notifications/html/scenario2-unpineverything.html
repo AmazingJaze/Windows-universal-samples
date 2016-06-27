@@ -7,7 +7,7 @@ Copyright (c) Microsoft Corporation. All rights reserved
 
 <head>
     <title></title>
-    <!--<link href="/css/scenario1-pinningsecondarytiles.css" rel="stylesheet" />-->
+    <link href="/css/scenario2-unpineverything.css" rel="stylesheet" />
     <script src="/js/scenario2-unpineverything.js"></script>
 </head>
 
@@ -24,13 +24,14 @@ Copyright (c) Microsoft Corporation. All rights reserved
             Your app can programatically unpin its secondary tiles.
         </p>
         <p>
-            The above button loops through all secondary tiles using FindAllAsync() and calls RequestDeleteAsync() on each tile to unpin all secondary tiles.
+            The above button loops through all secondary tiles using FindAllAsync() and calls RequestDeleteAsync() on each tile to unpin all secondary tiles. 
+            Any secondary tiles currently pinned for this app will have their metadata listed below.
         </p>
 
         <!-- WinJS.Binding.Template for #scenariocontrol -->
         <div id="scenarioitem" data-win-control="WinJS.Binding.Template" data-win-options="{ debugBreakOnRender: false }" style="display: none;">
-            <div class="scenarioitem" data-win-bind="title: title">
-                <span>displayName: </span><span data-win-bind="innerText: displayName"></span><br />
+            <div class="scenarioitem" data-win-bind="title: displayName">
+                <span class="displayname">displayName: </span><span class="displayname" data-win-bind="innerText: displayName"></span><br />
                 <span>tileId: </span><span data-win-bind="innerText: tileId"></span><br />
                 <span>arguments: </span><span data-win-bind="innerText: arguments"></span><br />
                 <span>visualElements.backgroundColor: </span><span data-win-bind="innerText: visualElements.backgroundColor"></span><br />
@@ -53,8 +54,8 @@ Copyright (c) Microsoft Corporation. All rights reserved
              data-win-control="WinJS.UI.ListView"
              data-win-options="{
             itemTemplate: select('#scenarioitem'),
-            selectionMode: WinJS.UI.SelectionMode.single,
-            tapBehavior: WinJS.UI.TapBehavior.directSelect,
+            selectionMode: WinJS.UI.SelectionMode.none,
+            tapBehavior: WinJS.UI.TapBehavior.none,
             layout: { type: WinJS.UI.ListLayout }
          }">
         </div>

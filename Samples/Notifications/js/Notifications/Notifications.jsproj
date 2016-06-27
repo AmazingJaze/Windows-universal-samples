@@ -157,6 +157,7 @@
     <Content Include="..\..\..\..\SharedContent\js\sample-utils\scenario-select.html">
       <Link>sample-utils\scenario-select.html</Link>
     </Content>
+    <Content Include="css\scenario2-unpineverything.css" />
     <Content Include="images\**\**" />
     <Content Include="css\scenario1-pinningsecondarytiles.css" />
     <Content Include="html\scenario2-unpineverything.html" />
