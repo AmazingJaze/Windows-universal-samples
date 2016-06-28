@@ -8,6 +8,8 @@
     var scenarios = [
         { url: "/html/scenario1-pinningsecondarytiles.html", title: "Pinning secondary tiles" },
 
+        { url: "/html/scenario2-updatesecondarytile.html", title: "Update Secondary tile" },
+
         { url: "/html/scenario2-unpineverything.html", title: "Unpin everything" },
 
         { url: "/html/scenario2-badges.html", title: "Badges" },

@@ -40,7 +40,7 @@
         pinCommand.disabled = true;
 
         try {
-            var tile = SecondaryTile(new Date().getTime());
+            var tile = new SecondaryTile(new Date().getTime());
             tile.arguments = "args";
             tile.displayName = displayNameInput.value;
 

@@ -1,0 +1,7 @@
+﻿#scenario2 #scenariocontrol {
+    height: 100%;
+}
+
+#scenario2 .displayname {
+    font-weight:bold;
+}
