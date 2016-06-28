@@ -10,9 +10,9 @@
 
         { url: "/html/scenario2-updatesecondarytile.html", title: "Update Secondary tile" },
 
-        { url: "/html/scenario2-unpineverything.html", title: "Unpin everything" },
+        { url: "/html/scenario9-unpineverything.html", title: "Unpin everything" },
 
-        { url: "/html/scenario2-badges.html", title: "Badges" },
+        //{ url: "/html/scenario2-badges.html", title: "Badges" },
         //{ url: "/html/scenario3-enum.html", title: "Calendar enumeration and math" },
         //{ url: "/html/scenario4-unicodeExtensions.html", title: "Calendar with Unicode extensions in languages" },
         //{ url: "/html/scenario5-timeZone.html", title: "Calendar time zone support" }

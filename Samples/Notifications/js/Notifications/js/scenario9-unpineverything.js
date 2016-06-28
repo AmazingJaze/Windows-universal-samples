@@ -25,7 +25,7 @@
     // UI controls on the page
     var secondaryTilesListView;
 
-    var page = WinJS.UI.Pages.define("/html/scenario2-unpineverything.html", {
+    var page = WinJS.UI.Pages.define("/html/scenario9-unpineverything.html", {
         ready: function (element, options) {
 
             unpinCommand = element.querySelector("#unpincommand");
