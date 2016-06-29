@@ -158,6 +158,7 @@
       <Link>sample-utils\scenario-select.html</Link>
     </Content>
     <Content Include="css\scenario9-unpineverything.css" />
+    <Content Include="html\scenario3-primarytilenotifications.html" />
     <Content Include="html\scenario2-updatesecondarytile.html" />
     <Content Include="images\**\**" />
     <Content Include="css\scenario1-pinningsecondarytiles.css" />
@@ -165,6 +166,7 @@
     <Content Include="html\scenario1-pinningsecondarytiles.html" />
     <Content Include="js\sample-configuration.js" />
     <Content Include="js\scenario1-pinningsecondarytiles.js" />
+    <Content Include="js\scenario3-primarytilenotifications.js" />
     <Content Include="js\scenario2-updatesecondarytile.js" />
     <Content Include="js\scenario9-unpineverything.js" />
     <None Include="Notifications_TemporaryKey.pfx" />

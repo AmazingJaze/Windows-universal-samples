@@ -8,7 +8,9 @@
     var scenarios = [
         { url: "/html/scenario1-pinningsecondarytiles.html", title: "Pinning secondary tiles" },
 
-        { url: "/html/scenario2-updatesecondarytile.html", title: "Update Secondary tile" },
+        { url: "/html/scenario2-updatesecondarytile.html", title: "Update secondary tile" },
+
+        { url: "/html/scenario3-primarytilenotifications.html", title: "Primary tile notifications" },
 
         { url: "/html/scenario9-unpineverything.html", title: "Unpin everything" },
 
