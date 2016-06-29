@@ -27,11 +27,10 @@
             sendCommand.disabled = false;
 
             clearCommand = element.querySelector("#clearcommand");
-            //clearCommand.addEventListener("click", clearNotification);
-            //clearCommand.disabled = true;
+            clearCommand.addEventListener("click", clearNotification);
 
-            //restartCommand = element.querySelector("#restartcommand");
-            //restartCommand.addEventListener("click", restartScenario);
+            restartCommand = element.querySelector("#restartcommand");
+            restartCommand.addEventListener("click", restartScenario);
 
         }
     });
@@ -53,7 +52,7 @@
                         "<text hint-wrap='true' hint-style='captionSubtle'/>" +
                     "</binding>" +
                 "</visual>" +
-                "</tile>";        
+                "</tile>";
 
         var doc = new XmlDocument();
         doc.loadXml(xml);
@@ -70,14 +69,10 @@
             var notification = new TileNotification(doc);
             TileUpdateManager.createTileUpdaterForApplication().update(notification);
         });
+    }
 
-        // Assign date/time values through XmlDocument to avoid any xml escaping issues
-        //foreach (XmlElement textEl in doc.SelectNodes("//text").OfType<XmlElement>())
-        //if (textEl.InnerText.Length == 0)
-        //    textEl.InnerText = nowTimeString;
-
-        //TileNotification notification = new TileNotification(doc);
-        //TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
+    function clearNotification() {
+        TileUpdateManager.createTileUpdaterForApplication().clear();
     }
 
     function restartScenario() {
