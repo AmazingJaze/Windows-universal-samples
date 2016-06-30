@@ -8,13 +8,6 @@
     var TileUpdateManager = Windows.UI.Notifications.TileUpdateManager;
     var Tiles = NotificationsExtensions.Tiles;
 
-
-    var SecondaryTile = Windows.UI.StartScreen.SecondaryTile;
-    var TileSize = Windows.UI.StartScreen.TileSize;
-    var Uri = Windows.Foundation.Uri;
-    var MessageDialog = Windows.UI.Popups.MessageDialog;
-    var _tileId;
-
     // UI elements on the page
     var sendCommand;
     var clearCommand;
