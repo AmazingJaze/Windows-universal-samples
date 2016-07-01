@@ -178,14 +178,6 @@
     <Content Include="packages.config" />
     <None Include="Notifications_TemporaryKey.pfx" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="NotificationsExtensions">
-      <HintPath>..\packages\NotificationsExtensions.Win10.14332.0.1\lib\Windows\NotificationsExtensions.winmd</HintPath>
-      <IsWinMDFile>true</IsWinMDFile>
-      <CopyLocal>True</CopyLocal>
-      <SpecificVersion>True</SpecificVersion>
-    </Reference>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <Import Project="..\packages\NotificationsExtensions.Win10.14332.0.1\build\Windows\NotificationsExtensions.Win10.targets" Condition="Exists('..\packages\NotificationsExtensions.Win10.14332.0.1\build\Windows\NotificationsExtensions.Win10.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

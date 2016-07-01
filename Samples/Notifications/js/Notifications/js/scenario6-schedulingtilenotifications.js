@@ -11,9 +11,6 @@
     var TileUpdateManager = Windows.UI.Notifications.TileUpdateManager;
     var Tiles = NotificationsExtensions.Tiles;
 
-    var Calendar = Windows.Globalization.Calendar;
-    var DateTimeFormatter = Windows.Globalization.DateTimeFormatting.DateTimeFormatter;
-
     var _tileId;
 
     // UI elements on the page
@@ -62,8 +59,6 @@
     function scheduleNotifications() {
 
         scheduleCommand.disabled = true;
-
-        //https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.notifications.scheduledtilenotification.aspx
 
         // Schedule times for notifications.
         function _scheduleNotification(args) {

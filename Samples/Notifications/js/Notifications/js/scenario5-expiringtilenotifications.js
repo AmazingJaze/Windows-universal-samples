@@ -11,9 +11,6 @@
     var TileUpdateManager = Windows.UI.Notifications.TileUpdateManager;
     var Tiles = NotificationsExtensions.Tiles;
 
-    var Calendar = Windows.Globalization.Calendar;
-    var DateTimeFormatter = Windows.Globalization.DateTimeFormatting.DateTimeFormatter;
-
     var _tileId;
 
     // UI elements on the page
@@ -54,15 +51,10 @@
 
     function sendNotification() {
 
-        // Decide expiration time
-        var cal = new Calendar();
-        cal.setToNow();
-        cal.addSeconds(20);
-
-        // Get expiration time and date.
-        var longTime = DateTimeFormatter("longtime");
-        var expirationTime = cal.getDateTime();
-        var expirationTimeString = longTime.format(expirationTime);
+        // Set expiration time to 20 seconds.
+        var expirationTime = new Date();
+        expirationTime.setSeconds(expirationTime.getSeconds() + 20);
+        var expirationTimeString = expirationTime.toLocaleTimeString();
 
         // Build TileText
         var lineOfText = new Tiles.TileText();

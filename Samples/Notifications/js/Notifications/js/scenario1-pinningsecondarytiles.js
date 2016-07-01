@@ -5,6 +5,7 @@
 
     var SecondaryTile = Windows.UI.StartScreen.SecondaryTile;
     var Uri = Windows.Foundation.Uri;
+    var Colors = Windows.UI.Colors;
 
     // UI elements on the page
     var pinCommand;
@@ -57,6 +58,7 @@
                 tile.visualElements.square310x310Logo = new Uri("ms-appx:///images/DefaultSecondaryTileAssests/Large.png");
             }
 
+            tile.visualElements.backgroundColor = Colors.purple;
             tile.visualElements.showNameOnSquare150x150Logo = checkBoxShowNameOnSquare150x150Logo.checked;
             tile.visualElements.showNameOnSquare310x310Logo = checkBoxShowNameOnSquare310x310Logo.checked;
             tile.visualElements.showNameOnWide310x150Logo = checkBoxShowNameOnWide310x150Logo.checked;
