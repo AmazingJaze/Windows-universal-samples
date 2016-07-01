@@ -3,33 +3,60 @@
 (function () {
     "use strict";
 
+    var SecondaryTile = Windows.UI.StartScreen.SecondaryTile;
+    var TileSize = Windows.UI.StartScreen.TileSize;
+    var Uri = Windows.Foundation.Uri;
+
     var TileNotification = Windows.UI.Notifications.TileNotification;
     var TileUpdateManager = Windows.UI.Notifications.TileUpdateManager;
     var Tiles = NotificationsExtensions.Tiles;
 
+    var _tileId;
+
     // UI elements on the page
     var sendCommand;
-    var clearCommand;
+    var pinCommand;
 
-    var page = WinJS.UI.Pages.define("/html/scenario3-primarytilenotifications.html", {
+
+    var page = WinJS.UI.Pages.define("/html/scenario4-secondarytilenotifications.html", {
         ready: function (element, options) {
+
+            pinCommand = element.querySelector("#pincommand");
+            pinCommand.addEventListener("click", pinTile);
 
             sendCommand = element.querySelector("#sendcommand");
             sendCommand.addEventListener("click", sendNotification);
-            sendCommand.disabled = false;
-
-            clearCommand = element.querySelector("#clearcommand");
-            clearCommand.addEventListener("click", clearNotification);
-
         }
     });
+
+    function pinTile() {
+
+        pinCommand.disabled = true;
+
+        // Generate a unique tile ID for the purposes of the sample
+        _tileId = new Date().getTime().toString();
+
+        // Initialize and pin a new secondary tile.
+        var tile = new SecondaryTile(_tileId, "Secondary notifications", "args", new Uri("ms-appx:///images/DefaultSecondaryTileAssests/Medium.png"), TileSize.default);
+        tile.visualElements.square71x71Logo = new Uri("ms-appx:///images/Small.png");
+        tile.visualElements.wide310x150Logo = new Uri("ms-appx:///images/WideLogo.png");
+        tile.visualElements.square310x310Logo = new Uri("ms-appx:///images/LargeLogo.png");
+        tile.visualElements.square44x44Logo = new Uri("ms-appx:///images/SmallLogo.png");
+        tile.visualElements.showNameOnSquare150x150Logo = true;
+        tile.visualElements.showNameOnSquare310x310Logo = true;
+        tile.visualElements.showNameOnWide310x150Logo = true;
+
+        tile.requestCreateAsync().then(function complete() {
+            pinCommand.disabled = false;
+        });
+    }
 
     function sendNotification() {
 
         var nowTimeString = new Date().toLocaleString();
 
         var textConfigs = [
-            { text: "New primary tile notification", wrap: true },
+            { text: "New secondary tile notification", wrap: true },
             { text: nowTimeString, wrap: true, style: Tiles.TileTextStyle.captionSubtle }
         ];
 
@@ -56,11 +83,7 @@
 
         var doc = tileContent.getXml();
         var notification = new TileNotification(doc);
-        TileUpdateManager.createTileUpdaterForApplication().update(notification);
-    }
-
-    function clearNotification() {
-        TileUpdateManager.createTileUpdaterForApplication().clear();
+        TileUpdateManager.createTileUpdaterForSecondaryTile(_tileId).update(notification);
     }
 
 })();

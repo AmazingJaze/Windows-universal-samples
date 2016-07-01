@@ -12,6 +12,16 @@
 
         { url: "/html/scenario3-primarytilenotifications.html", title: "Primary tile notifications" },
 
+        { url: "/html/scenario4-secondarytilenotifications.html", title: "Secondary tile notifications" },
+
+        { url: "/html/scenario5-expiringtilenotifications.html", title: "Expiring tile notifications" },
+
+        { url: "/html/scenario6-schedulingtilenotifications.html", title: "Scheduling tile notifications" },
+
+        { url: "/html/scenario7-primarytilebadges.html", title: "Primary tile badges" },
+
+        { url: "/html/scenario8-secondarytilebadges.html", title: "Secondary tile badges" },
+
         { url: "/html/scenario9-unpineverything.html", title: "Unpin everything" },
 
         //{ url: "/html/scenario2-badges.html", title: "Badges" },

@@ -27,7 +27,6 @@
 
             restartCommand = element.querySelector("#restartcommand");
             restartCommand.addEventListener("click", restartScenario);
-
         }
     });
 
