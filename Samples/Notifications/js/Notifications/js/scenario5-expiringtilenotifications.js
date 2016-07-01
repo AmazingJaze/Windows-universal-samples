@@ -40,22 +40,19 @@
 
         // Initialize and pin a new secondary tile.
         var tile = new SecondaryTile(_tileId, "Expiring Notification", "args", new Uri("ms-appx:///images/DefaultSecondaryTileAssests/Medium.png"), TileSize.default);
-        tile.visualElements.square71x71Logo = new Uri("ms-appx:///images/cancel.png");
-        tile.visualElements.wide310x150Logo = new Uri("ms-appx:///images/cancel.png");
-        tile.visualElements.square310x310Logo = new Uri("ms-appx:///images/cancel.png");
+        tile.visualElements.square71x71Logo = new Uri("ms-appx:///images/Small.png");
+        tile.visualElements.wide310x150Logo = new Uri("ms-appx:///images/WideLogo.png");
+        tile.visualElements.square310x310Logo = new Uri("ms-appx:///images/LargeLogo.png");
         tile.visualElements.showNameOnSquare150x150Logo = true;
         tile.visualElements.showNameOnSquare310x310Logo = true;
         tile.visualElements.showNameOnWide310x150Logo = true;
 
         tile.requestCreateAsync().then(function complete() {
-            // unlock the rest of the scenario
             pinCommand.disabled = false;
         });
     }
 
     function sendNotification() {
-
-        var nowTimeString = new Date().toLocaleString();
 
         // Decide expiration time
         var cal = new Calendar();

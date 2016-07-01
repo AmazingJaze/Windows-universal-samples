@@ -161,6 +161,7 @@
     <Content Include="html\scenario2-updatesecondarytile.html" />
     <Content Include="html\scenario4-secondarytilenotifications.html" />
     <Content Include="html\scenario3-primarytilenotifications.html" />
+    <Content Include="html\scenario6-schedulingtilenotifications.html" />
     <Content Include="html\scenario5-expiringtilenotifications.html" />
     <Content Include="images\**\**" />
     <Content Include="css\scenario1-pinningsecondarytiles.css" />
@@ -168,6 +169,7 @@
     <Content Include="html\scenario1-pinningsecondarytiles.html" />
     <Content Include="js\sample-configuration.js" />
     <Content Include="js\scenario1-pinningsecondarytiles.js" />
+    <Content Include="js\scenario6-schedulingtilenotifications.js" />
     <Content Include="js\scenario5-expiringtilenotifications.js" />
     <Content Include="js\scenario4-secondarytilenotifications.js" />
     <Content Include="js\scenario3-primarytilenotifications.js" />
