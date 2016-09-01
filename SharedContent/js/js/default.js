@@ -9,14 +9,14 @@
     var splitView;
 
     WinJS.Namespace.define("SdkSample", {
-        paneHiddenInitially: false
+        paneOpenInitially: false
     });
 
     function activated(eventObject) {
         var activationKind = eventObject.detail.kind;
         var activatedEventArgs = eventObject.detail.detail;
 
-        SdkSample.paneHiddenInitially = window.innerWidth <= 768;
+        SdkSample.paneOpenInitially = window.innerWidth > 768;
         var p = WinJS.UI.processAll().
             then(function () {
                 splitView = document.querySelector("#root").winControl;
